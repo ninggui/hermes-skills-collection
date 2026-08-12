@@ -8,7 +8,7 @@ description: Docker容器运维：exec/cp/restart、只读挂载修改、config�
 ## 环境
 - 宿主机：绿联NAS Docker
 - docker.sock已挂载到Hermes容器
-- 容器路径：`/volume1/docker/guining/<name>/`
+- 容器路径：`/volume1/docker/user/<name>/`
 
 ## 常用操作
 
@@ -88,7 +88,7 @@ docker exec <container> touch /app/config.json  # → Read-only file system
 ```bash
 # 1. 启动临时容器挂载 NAS 目录为 rw
 docker run -d --name tmp-cfg-<name> \
-  -v /volume1/docker/guining/<name>:/work:rw \
+  -v /volume1/docker/user/<name>:/work:rw \
   alpine sleep 300
 
 # 2. 备份（如果 .sf_backup 不存在）
@@ -118,7 +118,7 @@ docker exec ai-morning pkill -f "app_main_fixed.py"
 # 容器内（可能缓存旧 inode）
 docker exec ai-morning cat /app/config.json | python3 -c "..."
 # NAS host（实际文件）
-docker run --rm -v /volume1/docker/guining/ai-morning:/work:rw alpine cat /work/config.json | python3 -c "..."
+docker run --rm -v /volume1/docker/user/ai-morning:/work:rw alpine cat /work/config.json | python3 -c "..."
 ```
 
 **解决方案**：必须重启整个容器（非 pkill 进程）。docker stop/restart 被 consent 拦时，用 Docker API（见下方）。
@@ -149,12 +149,12 @@ docker exec <container> grep -c "新函数名" /app/processor_ai.py
 docker run --rm -v /volume1:/vol1 alpine cp /volume1/docker/... /work/file
 # ✅ 正确：临时容器内用 /vol1
 docker run --rm -v /volume1:/vol1 alpine \
-  cp /vol1/docker/guining/Hermes/fixed.py /vol1/docker/guining/ai-morning/processor_ai.py
+  cp /vol1/docker/user/Hermes/fixed.py /vol1/docker/user/ai-morning/processor_ai.py
 ```
 
-**关键映射**：`/opt/data`（Hermes 容器工作目录）= 宿主机 `/volume1/docker/guining/Hermes`。所以写到 `/opt/data/xxx.py` 的文件，临时容器内路径是 `/vol1/docker/guining/Hermes/xxx.py`——不需要第二个 `-v` 挂载。
+**关键映射**：`/opt/data`（Hermes 容器工作目录）= 宿主机 `/volume1/docker/user/Hermes`。所以写到 `/opt/data/xxx.py` 的文件，临时容器内路径是 `/vol1/docker/user/Hermes/xxx.py`——不需要第二个 `-v` 挂载。
 
-**第二个 -v 挂载文件的坑**：`-v /opt/data/file.py:/tmp/file.py:ro` 在部分 docker 版本下会解析失败（`can't stat '/vol1/.../file.py'` 被当成目录拼接）。优先用"写文件到 /opt/data → 临时容器从 /vol1/docker/guining/Hermes/ 读"的单挂载模式。
+**第二个 -v 挂载文件的坑**：`-v /opt/data/file.py:/tmp/file.py:ro` 在部分 docker 版本下会解析失败（`can't stat '/vol1/.../file.py'` 被当成目录拼接）。优先用"写文件到 /opt/data → 临时容器从 /vol1/docker/user/Hermes/ 读"的单挂载模式。
 
 ### Docker API 绕过 consent（突破性方法）
 

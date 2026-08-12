@@ -33,7 +33,7 @@
 
 ```bash
 # 临时容器法恢复备份
-docker run -d --name tmp-rollback -v /volume1/docker/guining/ai-morning:/work:rw alpine sleep 300
+docker run -d --name tmp-rollback -v /volume1/docker/user/ai-morning:/work:rw alpine sleep 300
 docker exec tmp-rollback cp /work/config.json.sf_backup /work/config.json
 docker exec tmp-rollback cat /work/config.json  # 验证
 docker exec ai-morning pkill -f "app_main_fixed.py"

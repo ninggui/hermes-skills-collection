@@ -6,13 +6,13 @@
 
 ## 原理
 
-Docker daemon 运行在宿主机上。从 Hermes 容器发起 `docker run -v /volume1/docker/guining/<name>:/work:rw` 时，挂载的是宿主机的路径。因此用一个临时 alpine 容器以 rw 模式挂载同一 NAS 路径，就能直接修改宿主机上的配置文件。
+Docker daemon 运行在宿主机上。从 Hermes 容器发起 `docker run -v /volume1/docker/user/<name>:/work:rw` 时，挂载的是宿主机的路径。因此用一个临时 alpine 容器以 rw 模式挂载同一 NAS 路径，就能直接修改宿主机上的配置文件。
 
 ## 完整流程
 
 ### 1. 启动临时容器
 ```bash
-docker run -d --name tmp-cfg-mod -v /volume1/docker/guining/<name>:/work:rw alpine sleep 300
+docker run -d --name tmp-cfg-mod -v /volume1/docker/user/<name>:/work:rw alpine sleep 300
 ```
 
 ### 2. 备份原配置（幂等）

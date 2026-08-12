@@ -6,7 +6,7 @@
 
 | 文件类型 | 能否从 NAS 源目录改 | 修复途径 |
 |---|---|---|
-| config.json（ro bind mount） | ✅ 改 `/volume1/docker/guining/<name>/config.json` | 临时 rw 容器写回 + 重启 |
+| config.json（ro bind mount） | ✅ 改 `/volume1/docker/user/<name>/config.json` | 临时 rw 容器写回 + 重启 |
 | processor_ai.py（镜像层，非挂载） | ❌ 改 NAS 源无效（容器用镜像层副本） | ① `docker cp` 覆盖容器内文件（写入可写层，重启容器保留）② 重新构建镜像 |
 | data/（rw mount） | ✅ 直接改 | docker exec 写入 |
 
@@ -19,7 +19,7 @@ docker exec ai-morning grep -c "fetch_news" /app/processor_ai.py
 ```
 
 **修改镜像层代码的完整流程**：
-1. `docker run --rm -v /volume1:/vol1 alpine cat /vol1/docker/guining/<name>/processor_ai.py > /opt/data/xxx.py` 读源
+1. `docker run --rm -v /volume1:/vol1 alpine cat /vol1/docker/user/<name>/processor_ai.py > /opt/data/xxx.py` 读源
 2. 本地用 write_file/patch 修改
 3. `docker cp` 进容器（或临时容器写回 NAS 源——注意 NAS 源只影响未来重建，不影响当前容器）
 4. 重启容器验证
@@ -29,11 +29,11 @@ docker exec ai-morning grep -c "fetch_news" /app/processor_ai.py
 `docker run --rm -v /volume1:/vol1 -v /opt/data/xxx.json:/tmp/new.json alpine cp /tmp/new.json /vol1/...`
 会报 `Not a directory` —— 两个 -v 同时挂载文件+目录时路径解析错乱。
 
-**解法**：利用 hermes 挂载点作为中转（hermes 的 /opt/data 本身就映射到 `/volume1/docker/guining/Hermes`），临时容器只挂 `/volume1:/vol1` 一个源，从 `/vol1/docker/guining/Hermes/<file>` 读中转文件：
+**解法**：利用 hermes 挂载点作为中转（hermes 的 /opt/data 本身就映射到 `/volume1/docker/user/Hermes`），临时容器只挂 `/volume1:/vol1` 一个源，从 `/vol1/docker/user/Hermes/<file>` 读中转文件：
 ```bash
 docker run --rm -v /volume1:/vol1 alpine sh -c \
-  "cp /vol1/docker/guining/<name>/config.json /vol1/docker/guining/<name>/config.json.bak_0811 && \
-   cp /vol1/docker/guining/Hermes/ai_morning_new_config.json /vol1/docker/guining/<name>/config.json && \
+  "cp /vol1/docker/user/<name>/config.json /vol1/docker/user/<name>/config.json.bak_0811 && \
+   cp /vol1/docker/user/Hermes/ai_morning_new_config.json /vol1/docker/user/<name>/config.json && \
    echo MODIFIED_OK"
 ```
 

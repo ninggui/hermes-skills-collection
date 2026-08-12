@@ -1,4 +1,4 @@
-# Guining Hermes Skills
+# Hermes Skills Collection
 
 由日常 AI 协作中沉淀的可复用技能库（Skills）。每个 skill 包含触发条件、执行步骤、避坑清单，可直接用于 Hermes / Claude / 通用 AI Agent。
 

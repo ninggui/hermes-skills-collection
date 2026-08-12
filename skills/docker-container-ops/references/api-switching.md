@@ -26,7 +26,7 @@ docker exec <container> cat /app/config.json
 docker daemon 运行在宿主机上，临时容器可以访问 NAS 路径 `/volume1/`：
 ```bash
 docker run -d --name tmp-cfg-<name> \
-  -v /volume1/docker/guining/<name>:/work:rw \
+  -v /volume1/docker/user/<name>:/work:rw \
   alpine sleep 300
 
 docker exec tmp-cfg-<name> sh -c \
