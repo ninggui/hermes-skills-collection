@@ -15,6 +15,14 @@
 | Docker 容器运维 | [docker-container-ops](https://github.com/ninggui/docker-container-ops) | 容器操作 / 只读挂载 / config热更新 |
 | 自主问题解决 | [autonomous-problem-solving](https://github.com/ninggui/autonomous-problem-solving) | 先搜索再执行 / 失败分析 |
 | 中文去 AI 味 | [humanizer-zh](https://github.com/ninggui/humanizer-zh) | 去除 AI 生成痕迹 |
+| 品牌风格研究规范 | [brand-style-research](https://github.com/ninggui/brand-style-research) | 以品牌为主体的全景研究流程（6阶段） |
+| 小红书风格模仿 | [xhs-style-imitation](https://github.com/ninggui/xhs-style-imitation) | 分析博主风格指纹→按指纹写新文 |
+| KOL 深度内容研究 | [kol-content-research](https://github.com/ninggui/kol-content-research) | 定位账号→全量拉取→内涵提炼（只学内涵不学风格） |
+| Web 情报报告 | [web-intelligence-reports](https://github.com/ninggui/web-intelligence-reports) | 搜索→验证→结构化报告→发布 |
+| B站 API 模式 | [bilibili-api-patterns](https://github.com/ninggui/bilibili-api-patterns) | feed聚合 / cookie陷阱 / 防412 |
+| 影视资源自动化 | [media-resource-automation](https://github.com/ninggui/media-resource-automation) | 资源站搜片→磁力→网盘离线→观看 |
+| 电影资源站自动化 | [movie-resource-automation](https://github.com/ninggui/movie-resource-automation) | 登录→筛选→API提取磁力→缓存 |
+| Hermes 配置工作流 | [hermes-config-workflow](https://github.com/ninggui/hermes-config-workflow) | config.yaml / API key / fallback链 / web后端 |
 
 ## 使用方式
 
