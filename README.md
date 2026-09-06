@@ -23,6 +23,7 @@
 | 影视资源自动化 | [media-resource-automation](https://github.com/ninggui/media-resource-automation) | 资源站搜片→磁力→网盘离线→观看 |
 | 电影资源站自动化 | [movie-resource-automation](https://github.com/ninggui/movie-resource-automation) | 登录→筛选→API提取磁力→缓存 |
 | Hermes 配置工作流 | [hermes-config-workflow](https://github.com/ninggui/hermes-config-workflow) | config.yaml / API key / fallback链 / web后端 |
+| 抖音房产推广接入评估 | [douyin-realestate-research](https://github.com/ninggui/douyin-realestate-research) | 平台能力盘点 / 候选工具 / 推荐路径 |
 
 ## 使用方式
 
