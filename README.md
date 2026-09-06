@@ -24,6 +24,14 @@
 | 电影资源站自动化 | [movie-resource-automation](https://github.com/ninggui/movie-resource-automation) | 登录→筛选→API提取磁力→缓存 |
 | Hermes 配置工作流 | [hermes-config-workflow](https://github.com/ninggui/hermes-config-workflow) | config.yaml / API key / fallback链 / web后端 |
 | 抖音房产推广接入评估 | [douyin-realestate-research](https://github.com/ninggui/douyin-realestate-research) | 平台能力盘点 / 候选工具 / 推荐路径 |
+| 规则审计 | [rules-audit](https://github.com/ninggui/rules-audit) | 用户规则固化检查/自动补 |
+| 待办队列协议 | [task-queue-protocol](https://github.com/ninggui/task-queue-protocol) | 高峰入队闲时执行 |
+| 任务盘点 | [session-task-audit](https://github.com/ninggui/session-task-audit) | 未完成任务盘点 |
+| 研究前置协议 | [research-first-protocol](https://github.com/ninggui/research-first-protocol) | 先研究再行动方法论 |
+| 外部技能评估 | [external-skill-adoption](https://github.com/ninggui/external-skill-adoption) | 插件/技能比选采纳 |
+| 出行比价盯价 | [travel-deal-research](https://github.com/ninggui/travel-deal-research) | 机票/酒店/火车比价 |
+| 文档检索找回 | [document-content-search](https://github.com/ninggui/document-content-search) | 按内容片段找回文档 |
+| ima知识库操作 | [ima-knowledge-base](https://github.com/ninggui/ima-knowledge-base) | 腾讯ima API 检索/读取 |
 
 ## 使用方式
 
