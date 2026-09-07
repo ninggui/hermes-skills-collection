@@ -6,7 +6,7 @@
 
 | Skill | 仓库 | 功能 |
 |-------|------|------|
-| AI 研究前置协议 | [ai-research-protocol](https://github.com/ninggui/ai-research-protocol) | 触发词驱动的"先研究后行动"方法论 |
+| AI 研究前置协议 | [research-first-protocol](https://github.com/ninggui/research-first-protocol) | 触发词驱动的"先研究后行动"方法论 |
 | 新能源汽车求职框架 | [automotive-job-hunting-framework](https://github.com/ninggui/automotive-job-hunting-framework) | JD拆解 / STAR应答 / 简历优化 |
 | 新能源售后知识管理 | [ev-after-sales-knowledge-management](https://github.com/ninggui/ev-after-sales-knowledge-management) | 三电维修市场 / 培训体系 / 知识库SOP |
 | 新能源行业早报 | [ev-news-briefing](https://github.com/ninggui/ev-news-briefing) | 每日定时早报自动化 |
