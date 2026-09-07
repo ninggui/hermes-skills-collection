@@ -32,6 +32,7 @@
 | 出行比价盯价 | [travel-deal-research](https://github.com/ninggui/travel-deal-research) | 机票/酒店/火车比价 |
 | 文档检索找回 | [document-content-search](https://github.com/ninggui/document-content-search) | 按内容片段找回文档 |
 | ima知识库操作 | [ima-knowledge-base](https://github.com/ninggui/ima-knowledge-base) | 腾讯ima API 检索/读取 |
+| 心理咨询师与职业发展规划师评估模型 | [psycho-career-coach-model](https://github.com/ninggui/psycho-career-coach-model) | 全量语音记录→双角色评估→报告链 |
 
 ## 使用方式
 
