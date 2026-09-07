@@ -33,6 +33,8 @@
 | 文档检索找回 | [document-content-search](https://github.com/ninggui/document-content-search) | 按内容片段找回文档 |
 | ima知识库操作 | [ima-knowledge-base](https://github.com/ninggui/ima-knowledge-base) | 腾讯ima API 检索/读取 |
 | 心理咨询师与职业发展规划师评估模型 | [psycho-career-coach-model](https://github.com/ninggui/psycho-career-coach-model) | 全量语音记录→双角色评估→报告链 |
+| 小红书账号运营 | [xiaohongshu-account-operations](https://github.com/ninggui/xiaohongshu-account-operations) | 评论系统/人设/频率/反馈闭环（脱敏方法论） |
+| 小红书评论引流 | [xiaohongshu-comment-leads](https://github.com/ninggui/xiaohongshu-comment-leads) | 关键词策略/边界红线/风控处置（脱敏方法论） |
 
 ## 使用方式
 
