@@ -1,31 +1,34 @@
+<img src="./assets/cover.png" alt="Hermes 技能合集" width="100%">
+
 <div align="center">
 
-# Hermes Skills Collection
+# Hermes 技能合集
 
-**25 个实战验证的 Agent 技能，一键安装到 Hermes，开箱即用。**
+**25 个实战验证的 Agent 技能，一条命令装好——不用逐个 clone。**
 
-<p>
-  <a href="#"><img src="https://img.shields.io/badge/skills-25-blue" alt="25 Skills" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/install-one-command-green" alt="One Command Install" /></a>
-</p>
+![Status](https://img.shields.io/badge/status-production-green)
+![Skills](https://img.shields.io/badge/skills-25-blue)
+![Install](https://img.shields.io/badge/一键安装-bash%20install--all-green)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+[它解决什么问题](#它解决什么问题) - [为什么比分散仓强](#为什么比分散仓强) - [技能清单](#技能清单) - [快速开始](#快速开始)
 
 </div>
 
-## 为什么是合集不是 25 个独立 repo
+---
 
-- **一键安装**：`bash install-all.sh` 全部装好，不用逐个 clone
-- **统一版本管理**：所有技能在同一个 repo 里，一次 pull 全部更新
-- **单独引用不受影响**：`install-one.sh <name>` 按需安装单个
-- **发现性**：合集页是统一入口，别人搜 Hermes skills 一次性看到全部
+## 它解决什么问题
 
-## 快速开始
+我在日常 AI 协作中沉淀了一批可复用的方法论：B站视频总结、KOL 内涵提炼、规则审计、任务队列、cron 时区排查、新能源售后知识管理……每个都是踩过坑、跑通过的。问题是它们分散在脑子里或独立小仓里，换个环境要逐个 clone、逐个装，还容易漏。需要一个统一入口，把这些技能一次拉齐、一条命令装好。
 
-```bash
-git clone https://github.com/ninggui/hermes-skills-collection.git
-cd hermes-skills-collection
-bash install-all.sh                    # 全部安装到 ~/.hermes/skills
-bash install-one.sh bilibili-api-patterns  # 只装单个
-```
+## 为什么比分散仓强
+
+| 逐个找仓安装 | 本仓库合集 |
+|---|---|
+| 25 个仓逐个 clone | `bash install-all.sh` 一次全装到 `~/.hermes/skills` |
+| 分散更新，版本漂移 | 同一 repo 一次 pull 全部更新 |
+| 只要其中一个也得全拉 | `bash install-one.sh <name>` 按需装单个 |
+| 别人搜 Hermes 技能逐个找 | 合集页是统一入口，一次看到全部 |
 
 ## 技能清单
 
@@ -69,6 +72,16 @@ bash install-one.sh bilibili-api-patterns  # 只装单个
 | `document-content-search` | 文档内容检索 |
 | `ima-knowledge-base` | IMA知识库操作 |
 | `n8n-dify-deepseek-workflow` | n8n+Dify+DeepSeek工作流 |
+
+## 快速开始
+
+```bash
+git clone https://github.com/ninggui/hermes-skills-collection.git
+cd hermes-skills-collection
+
+bash install-all.sh                        # 全部安装到 ~/.hermes/skills
+bash install-one.sh bilibili-api-patterns  # 只装单个
+```
 
 ## License
 
